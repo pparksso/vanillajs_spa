@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>커피캣 스토어</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="App">
+    </main>
+    <script>
+      const app = document.getElementsByClassName('App');
+     
+      const path = window.location.pathname;
+      if(path === '/') history.pushState(null,'','/web/')
+      if(path === '/web/') {
+        fetch('https://h6uc5l8b1g.execute-api.ap-northeast-2.amazonaws.com/dev/products').then((res)=>res.json()).then((data) => console.log(data))
+      }
+      
+      // 리스트
+
+    </script>
+  </body>
+</html>
