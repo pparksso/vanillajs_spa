@@ -1,10 +1,16 @@
 <html>
   <head>
     <title>커피캣 스토어</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <main class="App">
-    </main>
-  </body>
+    <link rel="stylesheet" href="./src/styles.css">
+    </head>
+    <body>
+      <main class="App">
+      </main>
+    <script type="module">
+      import App from './src/App.js';
+
+
+      new App({$target: document.getElementsByClassName('App')[0]})
+    </script>
+    </body>
 </html>
