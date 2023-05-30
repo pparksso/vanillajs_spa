@@ -1,4 +1,5 @@
 import ProductList from './components/ProductList.js';
+import ProductDetail from './components/ProductDetail.js';
 
 export default function App({$target}){
 
@@ -9,12 +10,8 @@ export default function App({$target}){
     if(pathname === '/') {
       ProductList({$target})
     } else if(pathname.includes('/products/')) {
-    // 상세페이지
+      ProductDetail({$target})
     } else if(pathname === 'cart') {
     // 장바구니 페이지
     }
-    if(pathname === '/') {
-       
-    }
-
 }

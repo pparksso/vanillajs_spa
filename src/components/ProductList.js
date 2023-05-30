@@ -12,7 +12,7 @@ export default function ProductList({$target}) {
         $list.innerHTML = `
     ${items.map((i) => 
         `
-        <li class="Product">
+        <li class="Product" data-id='${i.id}'>
         <img src='${i.imageUrl}'>
         <div class="Product__info">
           <div>${i.name}</div>
@@ -26,5 +26,14 @@ export default function ProductList({$target}) {
     };
     fetchItems();
     
+    $list.addEventListener('click',(e) => {
+      const li = e.target.closest('li');
+      const {id} = li.dataset;
+
+      if(id) {
+        history.pushState(null,null,`/products/${id}`)
+      }
+    })
+
     return $target.appendChild($page)
 }

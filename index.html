@@ -9,8 +9,9 @@
     <script type="module">
       import App from './src/App.js';
 
+      App({$target: document.getElementsByClassName('App')[0]})
 
-      new App({$target: document.getElementsByClassName('App')[0]})
+      window.addEventListener('popstate', App({$target: document.getElementsByClassName('App')[0]}))
     </script>
     </body>
 </html>
