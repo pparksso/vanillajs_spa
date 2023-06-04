@@ -1,17 +1,13 @@
-import ProductList from './components/ProductList.js';
-import ProductDetail from './components/ProductDetail.js';
+import ProductList from './views/ProductList.js';
+import Detail from './views/Detail.js';
+import Cart from './views/Cart.js';
 
-export default function App({$target}){
-
-    const {pathname} = location;
-
-    $target.innerHTML = '';
-
-    if(pathname === '/') {
-      ProductList({$target})
-    } else if(pathname.includes('/products/')) {
-      ProductDetail({$target})
-    } else if(pathname === 'cart') {
-    // 장바구니 페이지
+export default function App($target) {
+    this.route = () => {
+        const { pathname } = location;
+        if(pathname === '/') new ProductList($target);
+        else if(pathname.includes('/products')) new Detail($target);
+        else if(pathname === '/cart') new Cart($target);
     }
+    this.route();
 }
