@@ -1,4 +1,4 @@
-import SelectItems from "./SelectItems";
+import SelectItems from "./SelectItems.js";
 
 export default function DetailItem($target, item) {
     const $container = document.createElement('div');
@@ -23,8 +23,12 @@ export default function DetailItem($target, item) {
           </select>
         `
         $target.appendChild($container);
-
         
+        $container.addEventListener('change',(e) => {
+          new SelectItems($container, item, e.target.value);
+          // ProductDetail__info 밑으로 들어가야됨 ㅠㅠ 다시 짜야돼..
+        })
+
     };
     
     this.render();
