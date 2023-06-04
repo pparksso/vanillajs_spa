@@ -1,3 +1,5 @@
+import { navigate } from '../routes/navigate.js';
+
 export default function ItemList($target, items) {
     const $list = document.createElement('ul');
     
@@ -20,8 +22,10 @@ export default function ItemList($target, items) {
         
         $list.addEventListener('click',(e) => {
           const {id} = e.target.closest('li').dataset;
-          history.pushState(null, null, `/products/:${id}`)
-        })
+          history.pushState(null, null, `/products/${id}`);
+          navigate('/products',false);
+        });
+
     }
 
     this.render()
